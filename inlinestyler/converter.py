@@ -47,8 +47,9 @@ class Conversion(object):
         CSSStyleSelector = CSSSelector("style,Style")
         matching = CSSStyleSelector.evaluate(document)
         for element in matching:
-            aggregate_css += element.text
-            element.getparent().remove(element)
+            if element.get('disable-inline') == None:
+                aggregate_css += element.text
+                element.getparent().remove(element)
 
         # Convert document to a style dictionary compatible with etree
         styledict = self.get_view(document, aggregate_css)

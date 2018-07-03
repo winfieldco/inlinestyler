@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='inlinestyler',
-    version=__import__('inlinestyler').__version__,
+    version=0.2.5-post1,
     description='Inlines external CSS into HTML elements.',
     long_description=open('README.rst').read(),
     author='Dave Cranwell',
